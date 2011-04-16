@@ -1,0 +1,23 @@
+<link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'/>
+<link rel='stylesheet' href='css/phone2chrome.css' type='text/css'/>
+<script type='text/javascript' src='js/dropbox.js'></script>
+
+<script type="text/javascript">
+	chrome.extension.onRequest.addListener(
+	  function(request, sender, sendResponse) {
+	    $("#title").html(request.title);	               
+        $("#path").html(request.body);
+      });
+	  
+</script>
+<body style="background-image: -webkit-gradient(linear, 50% 150%, 25% 25%, from(#46A7f0), to(#FFF));">
+<div id="main">
+
+<h1><img src="./imgs/page_white_text48.gif"/>Phone 2 Chrome Extension</h1> 
+
+
+<h2><div id="title"></div></h2>
+<div id="path"></div>
+</div>
+</body>
