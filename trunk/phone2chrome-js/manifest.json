@@ -1,0 +1,18 @@
+{
+  "name": "Phone 2 Google Chrome™",
+  "version": "2.3",
+  "description": "Send links from Android to Google Chrome™ via Dropbox. Easy and fast.",
+  "icons": {
+      "16": "./imgs/icon_18_web.png",
+      "128": "./imgs/icon_128_web.png"
+    },
+  "browser_action": {
+    "default_icon": "./imgs/icon_18_web.png",
+	"popup": "popup.html"
+  },
+  "background_page": "background.html",
+  "permissions": ["tabs", "http://*/*", "https://*/"],
+  "options_page": "help.html"
+  
+}
+

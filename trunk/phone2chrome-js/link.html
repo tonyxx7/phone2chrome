@@ -1,0 +1,57 @@
+<link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'/>
+<link rel='stylesheet' href='css/phone2chrome.css' type='text/css'/>
+<script type='text/javascript' src='js/dropbox.js'></script>
+
+<body style="background-image: -webkit-gradient(linear, 50% 150%, 25% 25%, from(#46A7f0), to(#FFF));">
+<div id="main">
+
+<h1><img src="./imgs/icon_48_web.png"/>Phone 2 Chrome Extension</h1> 
+<h2>> Link with Dropbox</h2>
+<div id="error">
+	
+</div>
+<div id="info">
+	
+</div>
+
+<div id="alts">
+  <p>Email</p>
+  <p>Password</p>
+</div>
+<div id="form">
+		<form id="login_form" action="doLogin()">
+	    <p><input type="text" id="email" placeholder="email" value=""/></p>
+		<p><input type="password" id="password" placeholder="password" value="" /></p>
+		<input type="button" id="signIn" onclick="doLogin()" value="Link with Dropbox" ></input>
+	  	</form>
+	  	
+</div>  
+<div id="loader">
+	<p>
+	Linking with Dropbox... <img src="./imgs/ajax-loader.gif"/>
+	</p>
+</div>
+
+<div id="options">
+	<h2>> Options</h2>
+			<div id="account">
+				<span id="accountInfo">Not logged in</span> 
+				<span id="unlink" style="display:none">| <a id="signOut" href="javascript:doLogout();return false" >Unlink from Dropbox</a><span>
+			</div>
+			
+	      <div id="optionsDiv">	  		
+	      	      <input type="checkbox" id="check_delete" onclick="setDeleteOld(this.checked)"/>Don't open previous visited links.
+	      </div>
+	      <div id="optionsDiv">	  		
+	          <input type="checkbox" id="check_autoOpen" onclick="setAuto(this.checked)"/>Open shared links instantly
+	      </div>
+</div>
+
+<div id="logo">		
+Don't have a Dropbox account yet? <a class="strong" href="http://www.dropbox.com" >Get one!</a>
+<br>
+<img src="imgs/synced_with_dropbox.png"/>
+</div>
+
+</body>

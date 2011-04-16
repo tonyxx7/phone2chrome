@@ -1,0 +1,78 @@
+<link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='css/phone2chrome.css' type='text/css'>
+<script type='text/javascript' src='js/dropbox.js'></script>
+
+
+<body style="background-image: -webkit-gradient(linear, 50% 150%, 25% 25%, from(#46A7f0), to(#FFF));">
+<div id="main">
+<h1><img class="icon" src="./imgs/icon_48_web.png"/> Phone 2 Chrome Extension</h1> 
+
+<div id="help">
+	<h2>> About</h2>
+	Phone 2 Chrome is a project consisting of a Chrome Extension, Android App, and using Dropbox service to send links from Android device to Chrome desktop browser.
+	
+	
+	<h2>> How does it works?</h2>
+	
+	Android application will create a file in your Dropbox filesystem at: 
+	<div id="path">
+		<img class="icon" src="./imgs/page_white_text48.gif"/>
+		/Dropbox/phone2chrome/pages
+	</div>
+	It contains information about links in standard <b>json</b> format. 
+	
+	When you share a web link in your Android phone with Phone2Chrome app it will add a new entry to this file.
+	<br/>
+	In your computer, you just need to launch Chrome and click on Phone2Chrome extension button. It will open each link in a new tab.
+	
+	<h2>> Know more</h2>
+	More information and source code at project web site: <a href="http://code.google.com/p/phone2chrome/">http://code.google.com/p/phone2chrome/</a>
+	<br/>
+	Also you can contact me on Twitter: <a href="http://www.twitter.com/lgvalle">@lgvalle</a>
+</div>
+<div id="options">
+	<h2>> Options</h2>
+			<div id="account">
+				<span id="accountInfo">Not logged in</span> 
+				<span id="unlink" style="display:none">| <a id="signOut" href="javascript:doLogout();return false" >Unlink from Dropbox</a><span>
+			</div>
+			
+	      <div id="optionsDiv">	  		
+	      	      <input type="checkbox" id="check_delete" onclick="setDeleteOld(this.checked)"/>Don't open previous visited links.
+	      </div>
+		  <div id="optionsDiv">	  		
+		      <input type="checkbox" id="check_autoOpen" onclick="setAuto(this.checked)"/>Open shared links instantly
+		  </div>
+
+</div>
+<div id="logo">		
+Don't have a Dropbox account yet? <a class="strong" href="http://www.dropbox.com" >Get one!</a>
+<br>
+<img src="imgs/synced_with_dropbox.png"/>
+</div>
+</div>
+</body>
+
+
+<script type="text/javascript">
+
+if (getDeleteOld()) {
+	//FIXME: No way to get this done with jQuery :S
+	document.getElementById("check_delete").checked = true;
+}
+
+if (localStorage["autoOpen"] == "true") {
+	//FIXME: No way to get this done with jQuery :S
+	document.getElementById("check_autoOpen").checked = true;
+}
+
+function showAccount(data){
+	$("#accountInfo").html(data.display_name);
+	$("#unlink").show();
+}
+
+dropbox.getAccount(showAccount.name);
+
+</script>
+

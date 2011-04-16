@@ -1,0 +1,40 @@
+<meta http-equiv="content-script-type" content="text/javascript">
+<link rel='stylesheet' href='css/phone2chrome.css' type='text/css'>
+<script type='text/javascript' src='js/dropbox.js'></script>
+
+
+<body onload="loadHandler()">
+<table>
+  <tr>
+    <td valign="top"><img src="imgs/icon_48_web.png" style="margin-right: 4px;"/></td>
+    <td width="100%" valign="middle">
+      <b><div id="msg"></div></b>
+      
+      <p>
+      	<a id="help" href="#" onclick="chrome.tabs.create({url: 'help.html'})">Help </a><span id="sep">|</span>
+      	<a id="options" href="#" onclick="showOptions()" >Options </a><span id="sep">|</span>
+      	<a id="options" href="#" onclick="chrome.tabs.create({url: 'history.html'})" >History </a><span id="sep">|</span>
+      	<a id="signOut" href="#" onclick="doLogout()" >Unlink</a>
+      </p>
+      <div id="optionsDiv" style="display:none">	  		
+      	      <input type="checkbox" id="check_delete" onclick="setDeleteOld(this.checked)"/>Don't open previous visited links.
+      </div>
+    </td>
+    <td valign="top"><a href="#" onclick="window.close()"><img src="imgs/popup_close.png" style="margin: 2px;"></a></td>
+  </tr>
+</table> 
+ 
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'/>
+<link rel='stylesheet' href='css/phone2chrome.css' type='text/css'/>
+<script type='text/javascript' src='js/dropbox.js'></script>
+
+<script type="text/javascript">
+		
+		
+	  console.log("Unlink. listener");	
+	chrome.extension.onRequest.addListener(
+	  function(request, sender, sendResponse) {
+	    console.log(sender.tab ? "from a content script:" + sender.tab.url :
+	                "from the extension");
+	               
+        $("#mainDiv").html(request.greeting);
+        
+	    if (request.greeting == "hello")
+	      sendResponse({farewell: "goodbye"});
+	    else
+	      sendResponse({}); // snub them.
+	    
+	  });
+	  
+
+	  
+</script>
+<body style="background-image: -webkit-gradient(linear, 50% 150%, 25% 25%, from(#46A7f0), to(#FFF));">
+<div id="main">
+
+<h1><img src="./imgs/icon_48_web.png"/>Phone 2 Chrome Extension</h1> 
+<h2>> Unlink</h2>
+<div id="mainDiv"></div>
+<p>You have suscessfully unlink Phone2Chrome Extension from your Dropbox account.</p>
+</div>
+</body>
