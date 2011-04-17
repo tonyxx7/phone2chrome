@@ -57,7 +57,8 @@ dropbox.cookieTime = 3650;
 /*-------------------No editing required beneath this line-------------------*/
 
 //Incude required JS libraries
-document.write("<script type='text/javascript' src='js/main.js'></script>");
+//document.write("<script type='text/javascript' src='js/main.js'></script>");
+document.write("<script type='text/javascript' src='js/phone2chrome.js'></script>");
 document.write("<script type='text/javascript' src='js/oauth.js'></script>");
 document.write("<script type='text/javascript' src='js/sha1.js'></script>");
 document.write("<script type='text/javascript' src='js/jquery.js'></script>");
@@ -260,7 +261,6 @@ dropbox.oauthRequest = function(param1,param2,callback) {
 	//Timestamp and sign the OAuth request
 	OAuth.setTimestampAndNonce(message);
 	OAuth.SignatureMethod.sign(message, accessor);
-
 	$.ajax({
 		url: message.action,
 		type: message.method,
